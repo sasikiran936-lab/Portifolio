@@ -8,34 +8,69 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial;
+      font-family: Arial, sans-serif;
       background: #0f172a;
-      color: white;
+      color: #e2e8f0;
     }
 
     header {
       text-align: center;
-      padding: 40px;
-      background: #1e293b;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
     }
 
-    h1 {
+    header h1 {
       margin: 0;
+      font-size: 32px;
+    }
+
+    header p {
+      margin-top: 10px;
+      color: #38bdf8;
     }
 
     section {
+      max-width: 900px;
+      margin: auto;
       padding: 20px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #38bdf8;
+      padding-bottom: 5px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 15px;
     }
 
     .card {
       background: #1e293b;
-      padding: 15px;
-      margin: 10px 0;
-      border-radius: 8px;
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
     }
 
     a {
       color: #38bdf8;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #94a3b8;
+    }
+
+    @media (min-width: 600px) {
+      .grid-2 {
+        grid-template-columns: 1fr 1fr;
+      }
     }
   </style>
 </head>
@@ -43,41 +78,45 @@
 <body>
 
 <header>
-  <h1>K.Sasi Kiran</h1>
+  <h1K.Sasi Kiran</h1>
   <p>Full Stack Web Developer</p>
 </header>
 
 <section>
   <h2>About</h2>
-  <p>I am a DCME student learning web development and building real projects.</p>
+  <p>
+    I am a DCME student focused on building real-world web applications using HTML, CSS, and JavaScript.
+  </p>
 </section>
 
 <section>
   <h2>Skills</h2>
-  <div class="card">HTML</div>
-  <div class="card">CSS</div>
-  <div class="card">JavaScript</div>
+  <div class="grid grid-2">
+    <div class="card">HTML</div>
+    <div class="card">CSS</div>
+    <div class="card">JavaScript</div>
+  </div>
 </section>
 
 <section>
   <h2>Projects</h2>
-  <div class="card">
-    <h3>Portfolio Website</h3>
-    <p>This is my personal portfolio hosted online.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>To-Do App</h3>
+      <p>Task manager with localStorage and interactive UI.</p>
+      <a href="https://sasikiran936-lab.github.io/Todo-app/" target="_blank">View Project</a>
+    </div>
   </div>
 </section>
 
 <section>
   <h2>Contact</h2>
   <p>Email: sasikiran936@gmail.com</p>
-  <button onclick="showMessage()">Click Me</button>
-
-<script>
-  function showMessage() {
-    alert("Thanks for visiting my portfolio!");
-  }
-</script>
 </section>
+
+<footer>
+  <p>© 2026 K.Sasi Kiran</p>
+</footer>
 
 </body>
 </html>
