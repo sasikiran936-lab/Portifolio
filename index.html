@@ -1,221 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
-    }
-
-    header {
-      text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(135deg, #1e293b, #0f172a);
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 32px;
-    }
-
-    header p {
-      margin-top: 10px;
-      color: #38bdf8;
-    }
-
-    section {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    h2 {
-      border-bottom: 2px solid #38bdf8;
-      padding-bottom: 5px;
-    }
-
-    .grid {
-      display: grid;
-      gap: 15px;
-    }
-
-    .card {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 10px;
-      transition: transform 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    a {
-      color: #38bdf8;
-      text-decoration: none;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #94a3b8;
-    }
-
-    @media (min-width: 600px) {
-      .grid-2 {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-    .featured-card {
-  background: #1e293b;
-  padding: 30px;
-  border-radius: 12px;
-  max-width: 900px;
-  margin: 20px auto;
-  font-size: 18px;
-  line-height: 1.6;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: #e2e8f0;
 }
 
-.featured-card h3 {
-  font-size: 24px;
-  margin-bottom: 10px;
+/* HEADER */
+header {
+  text-align: center;
+  padding: 80px 20px;
 }
 
-.featured-card a {
-  display: inline-block;
+header h1 {
+  font-size: 40px;
+  margin: 0;
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+header p {
+  color: #94a3b8;
   margin-top: 10px;
-  font-size: 16px;
-  color: #38bdf8;
 }
-    .project-card {
-  background: #1e293b;
-  padding: 25px;
+
+/* SECTION */
+section {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* TITLES */
+h2 {
+  border-left: 5px solid #38bdf8;
+  padding-left: 10px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+@media (min-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* CARD */
+.card {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 20px;
   border-radius: 12px;
-  margin: 15px 0;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255,255,255,0.05);
+  opacity: 0;
+  transform: translateY(40px);
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+/* HOVER EFFECT */
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 50px rgba(56,189,248,0.25);
 }
 
-.project-card ul {
-  text-align: left;
-  padding-left: 20px;
+/* LINK */
+a {
+  color: #38bdf8;
+  text-decoration: none;
 }
-  </style>
+
+/* SCROLL ANIMATION ACTIVE */
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* STAGGER EFFECT */
+.card:nth-child(1) { transition-delay: 0.1s; }
+.card:nth-child(2) { transition-delay: 0.2s; }
+.card:nth-child(3) { transition-delay: 0.3s; }
+
+/* SECTION FADE */
+.section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease;
+}
+
+.section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #64748b;
+}
+</style>
 </head>
 
 <body>
 
-<header>
+<header class="section">
   <h1>K.Sasi Kiran</h1>
-  <p>Full Stack Web Developer</p>
+  <p>Aspiring Web Developer | HTML • CSS • JavaScript</p>
 </header>
 
-  
-
-<section>
+<section class="section">
   <h2>About</h2>
-  <p>
-    I am a DCME student focused on building real-world web applications using HTML, CSS, and JavaScript.
-  </p>
+  <p>I am a DCME student building real-world web applications and improving my frontend skills.</p>
 </section>
 
-<section>
+<section class="section">
   <h2>Skills</h2>
-  <div class="grid grid-2">
+  <div class="grid">
     <div class="card">HTML</div>
     <div class="card">CSS</div>
     <div class="card">JavaScript</div>
   </div>
 </section>
 
-  <section>
-    <h2>Projects</h2>
-
-  <div class="featured-card">
-    <h3>Personal Portfolio Website</h3>
-
-    <p>
-      This is my responsive portfolio showcasing my projects and skills using HTML, CSS, and JavaScript.
-    </p>
-  </div>
-  
+<section class="section">
+  <h2>Projects</h2>
   <div class="grid">
+
     <div class="card">
       <h3>To-Do App</h3>
       <p>Task manager with localStorage and interactive UI.</p>
-      <a href="https://sasikiran936-lab.github.io/Todo-app/" target="_blank">View Project</a>
+      <a href="https://sasikiran936-lab.github.io/Todo-app/" target="_blank">View →</a>
     </div>
+
+    <div class="card">
+      <h3>Weather App</h3>
+      <p>Fetches real-time weather data using API.</p>
+      <a href="https://sasikiran936-lab.github.io/weather-app/" target="_blank">View →</a>
+    </div>
+
+    <div class="card">
+      <h3>Notes App</h3>
+      <p>Multi-page notes app with navigation and storage.</p>
+      <a href="https://sasikiran936-lab.github.io/notes-app/" target="_blank">View →</a>
+    </div>
+
   </div>
-
-    <div class="project-card">
-  <h3>Weather App</h3>
-
-  <p>
-    A weather application that fetches real-time data using an API and displays temperature, condition, and humidity.
-  </p>
-
-  <ul>
-    <li>Search by city</li>
-    <li>Live weather data</li>
-    <li>Built using JavaScript fetch API</li>
-  </ul>
-
-  <a href="https://sasikiran936-lab.github.io/Weatherapp/" target="_blank">
-    View Project →
-  </a>
-    </div>
-
-    <div class="project-card">
-  <h3>Notes App</h3>
-
-  <p>
-    A multi-page notes application where users can create notes with titles and view full content by clicking on each note.
-  </p>
-
-  <ul>
-    <li>Title-based navigation</li>
-    <li>Multi-page structure (index + detail view)</li>
-    <li>Data stored using localStorage</li>
-  </ul>
-
-  <a href="https://sasikiran936-lab.github.io/notes-app/" target="_blank">
-    View Project →
-  </a>
-    </div>
 </section>
 
-  <section>
-  <h2>GitHub</h2>
-
-  <div class="card">
-    <p>View my code and projects on GitHub:</p>
-
-    <a href="https://github.com/sasikiran936-lab" target="_blank">
-      Visit My GitHub →
-    </a>
-  </div>
-  </section>
-  
-
-<section>
+<section class="section">
   <h2>Contact</h2>
   <p>Email: sasikiran936@gmail.com</p>
+  <p>
+    <a href="https://github.com/sasikiran936-lab" target="_blank">GitHub</a>
+  </p>
 </section>
 
 <footer>
-  <p>© 2026 K.Sasi Kiran</p>
+  <p>© 2026 Your Name</p>
 </footer>
 
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll(".section, .card").forEach(el => {
+  observer.observe(el);
+});
+</script>
+
 </body>
-</html>
+      </html>
